@@ -700,16 +700,19 @@ int main() {
                             }//End of the selection loop
                         
                             //Display the selected seats
-                            cout << "Your selected seats: " << endl;
+                            cout << "\t         Your selected seats: " << endl;
 
                             for (int i = 0; i < ticket; i++) {
+                                if (i % 5 == 0) {
+                                    cout << "\t       ";
+                                }
+                            
                                 cout << "[" << selectedSeats[i] << "] ";
                             
-                                if ((i + 1) % 5 == 0) {
+                                if ((i + 1) % 5 == 0 || i == ticket - 1) {
                                     cout << endl;
                                 }
                             }
-                        
                             cout << "\n\n";
                         
                             confirmation(confirm6, confirmed6, "Returning to seat selection");
