@@ -292,13 +292,9 @@ void bookingSummary(string name, int age, string contact,
 void bookingDateTime(string &lastBookingDate, string &lastBookingTime) {
     time_t bookingNow = time(0) + (8 * 60 * 60);
     tm *bookingLocal = gmtime(&bookingNow);
-
-    // Save date
     lastBookingDate = to_string(bookingLocal->tm_mon + 1) + "/" +
                       to_string(bookingLocal->tm_mday) + "/" +
                       to_string(bookingLocal->tm_year + 1900);
-
-    // Save time
     int hour = bookingLocal->tm_hour;
     string period = (hour >= 12) ? "PM" : "AM";
 
